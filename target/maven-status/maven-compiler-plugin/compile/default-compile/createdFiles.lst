@@ -1,0 +1,5 @@
+com/ustl/ifi/tp/pokemon_type_api/repository/PokemonTypeRepository.class
+com/ustl/ifi/tp/pokemon_type_api/bo/PokemonType.class
+com/ustl/ifi/tp/pokemon_type_api/repository/PokemonTypeRepositoryImpl.class
+com/ustl/ifi/tp/pokemon_type_api/bo/Sprites.class
+com/ustl/ifi/tp/pokemon_type_api/bo/Stats.class
