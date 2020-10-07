@@ -1,1 +1,4 @@
+com/ustl/ifi/tp/pokemon_type_api/controller/PokemonTypeControllerTest.class
+com/ustl/ifi/tp/pokemon_type_api/controller/PokemonTypeControllerIntegrationTest.class
 com/ustl/ifi/tp/pokemon_type_api/repository/PokemonTypeRepositoryImplTest.class
+com/ustl/ifi/tp/pokemon_type_api/service/PokemonTypeServiceImplTest.class

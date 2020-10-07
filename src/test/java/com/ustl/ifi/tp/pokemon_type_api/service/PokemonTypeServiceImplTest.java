@@ -2,9 +2,11 @@ package com.ustl.ifi.tp.pokemon_type_api.service;
 
 import com.ustl.ifi.tp.pokemon_type_api.repository.PokemonTypeRepository;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PokemonTypeServiceImplTest {
 
@@ -27,5 +29,24 @@ class PokemonTypeServiceImplTest {
 
         verify(pokemonTypeRepository).findAllPokemonType();
     }
+
+    @Test
+    void applicationContext_shouldLoadPokemonTypeService(){
+        var context = new AnnotationConfigApplicationContext("com.ustl.ifi.tp.pokemon_type_api");
+        var serviceByName = context.getBean("pokemonTypeServiceImpl");
+        var serviceByClass = context.getBean(PokemonTypeService.class);
+
+        assertEquals(serviceByName, serviceByClass);
+        assertNotNull(serviceByName);
+        assertNotNull(serviceByClass);
+    }
+
+    @Test
+    void pokemonTypeRepository_shouldBeAutowired_withSpring(){
+        var context = new AnnotationConfigApplicationContext("com.ustl.ifi.tp.pokemon_type_api");
+        var service = context.getBean(PokemonTypeServiceImpl.class);
+        assertNotNull(service.pokemonTypeRepository);
+    }
+
 
 }
